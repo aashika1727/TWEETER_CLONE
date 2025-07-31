@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}My Tweets{% endblock %}
+{% block content %}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="mb-0">My Tweets</h2>
+  <div>
+    <a href="{% url 'tweet_list' %}" class="btn btn-secondary btn-sm me-2">← Back to All Tweets</a>
+    <a class="btn btn-primary btn-sm" href="{% url 'tweet_create' %}">Create Tweet</a>
+  </div>
+</div>
+
+{% if tweets %}
+  <div class="row">
+    {% for tweet in tweets %}
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          {% if tweet.photo %}
+            <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Image" style="width: 100%; height: auto;">
+
+          {% endif %}
+          <div class="card-body">
+            <p class="card-text">{{ tweet.text }}</p>
+            <small class="text-muted">Posted at {{ tweet.created_at|date:"d M Y H:i" }}</small>
+            <div class="mt-2">
+              <a href="{% url 'tweet_edit' tweet.id %}" class="btn btn-warning btn-sm">Edit</a>
+              <a href="{% url 'tweet_delete' tweet.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>You haven’t tweeted anything yet.</p>
+{% endif %}
+
+{% endblock %}

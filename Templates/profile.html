@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}{{ profile_user.username }}'s Profile{% endblock %}
+{% block content %}
+
+<h2 class="mb-2">{{ profile_user.username }}'s Tweets</h2>
+<a href="{% url 'tweet_list' %}" class="btn btn-secondary btn-sm mb-3">← Back to All Tweets</a>
+
+{% for tweet in tweets %}
+  <div class="card mb-3">
+    {% if tweet.photo %}
+      <img src="{{ tweet.photo.url }}" class="card-img-top" alt="Tweet Image">
+    {% endif %}
+    <div class="card-body">
+      <p class="card-text">{{ tweet.text }}</p>
+      <small class="text-muted">Posted at {{ tweet.created_at|date:"d M Y H:i" }}</small>
+    </div>
+  </div>
+{% empty %}
+  <p>{{ profile_user.username }} hasn’t tweeted anything yet.</p>
+{% endfor %}
+
+{% endblock %}
