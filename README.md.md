@@ -1,11 +1,11 @@
 
-# 🐦 Tweeter Clone – Django Project
+#  Tweeter Clone – Django Project
 
 A mini Twitter-like web application built with Django and MySQL. Users can register, log in, post tweets (with optional photos), and view other users' profiles. Built for learning full-stack web development using Django.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - User registration and login/logout
 - Create, read, update, and delete tweets
@@ -17,7 +17,7 @@ A mini Twitter-like web application built with Django and MySQL. Users can regis
 
 ---
 
-## 🔧 Tech Stack
+##  Tech Stack
 
 - **Backend**: Django (Python)
 - **Frontend**: Django Templates, Bootstrap 5
@@ -27,7 +27,7 @@ A mini Twitter-like web application built with Django and MySQL. Users can regis
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 TWEETER_CLONE/
@@ -49,7 +49,7 @@ TWEETER_CLONE/
 
 ---
 
-## 🛠️ How to Run Locally
+##  How to Run Locally
 
 1. Clone the repository
 2. Create and activate a virtual environment
@@ -95,7 +95,7 @@ python manage.py runserver
 
 ---
 
-## 👤 Author
+##  Author
 
 - **Your Name**: Aashika Patel  
 - **GitHub**: [@aashika1727](https://github.com/aashika1727)
